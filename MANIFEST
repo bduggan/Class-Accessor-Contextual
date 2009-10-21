@@ -4,5 +4,5 @@ Makefile.PL
 README
 lib/Class/Accessor/Contextual.pm
 t/00-load.t
-t/pod-coverage.t
+t/01-basic.t
 t/pod.t

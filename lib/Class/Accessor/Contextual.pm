@@ -20,7 +20,7 @@ our $VERSION = '0.01';
     package Farm;
     use base qw/Class::Accessor::Contextual/;
 
-    __PACKAGE__->mk_accessors(qw/animals/);
+    Farm->mk_accessors(qw/animals/);
 
     my $farm = Farm->new();
     $farm->animals([qw/horse pig owl/]);
@@ -29,7 +29,7 @@ our $VERSION = '0.01';
 
 =head1 DESCRIPTION
 
-This is a class derived from Class::Accessor, in
+This is a simple class derived from Class::Accessor, in
 which values which are references to arrays or hashes
 are deferenced when called in list context.
 
@@ -50,7 +50,6 @@ under the terms of either: the GNU General Public License as published
 by the Free Software Foundation; or the Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
-
 
 =cut
 
