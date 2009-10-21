@@ -7,25 +7,21 @@ use strict;
 
 Class::Accessor::Contextual - context-aware accessors
 
-=head1 VERSION
-
-Version 0.01
-
 =cut
 
 our $VERSION = '0.01';
 
 =head1 SYNOPSIS
 
-    package Farm;
-    use base qw/Class::Accessor::Contextual/;
+ package Farm;
+ use base qw/Class::Accessor::Contextual/;
 
-    Farm->mk_accessors(qw/animals/);
+ Farm->mk_accessors(qw/animals/);
 
-    my $farm = Farm->new();
-    $farm->animals([qw/horse pig owl/]);
-    print join ' ', $farm->animals;
-    # horse pig owl
+ my $farm = Farm->new();
+ $farm->animals([qw/horse pig owl/]);
+ print join ' ', $farm->animals;
+ # horse pig owl
 
 =head1 DESCRIPTION
 
