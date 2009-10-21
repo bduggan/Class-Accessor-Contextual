@@ -5,7 +5,7 @@ use strict;
 
 =head1 NAME
 
-Class::Accessor::Contextual - context-aware accessors
+Class::Accessor::Contextual - Context-aware accessors
 
 =cut
 
@@ -16,18 +16,28 @@ our $VERSION = '0.01';
  package Farm;
  use base qw/Class::Accessor::Contextual/;
 
- Farm->mk_accessors(qw/animals/);
+ Farm->mk_accessors(qw/animals names/);
 
  my $farm = Farm->new();
+
  $farm->animals([qw/horse pig owl/]);
+
  print join ' ', $farm->animals;
+
  # horse pig owl
+
+ $farm->names({
+    horse => "Mr. Ed",
+    pig   => "Miss Piggy",
+    owl   => "Dr. Who"});
+
+ my %name_hash = $farm->names;
 
 =head1 DESCRIPTION
 
-This is a simple class derived from Class::Accessor, in
-which values which are references to arrays or hashes
-are deferenced when called in list context.
+This class overrides Class::Accessor's get() method
+so that references to arrays or hashes will automatically
+be dereferenced when called in list context.
 
 =head1 AUTHOR
 
